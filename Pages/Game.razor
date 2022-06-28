@@ -5,7 +5,7 @@
 
 <PageTitle>Flip cards</PageTitle>
 
-<button type="button" class="btn btn-secondary" @onclick="FillCards">Secondary</button>
+<button type="button" class="btn btn-secondary" @onclick="FillCards">Create cards</button>
 
 <div> 
     @foreach (var card in cards)
@@ -31,9 +31,10 @@
 
             for(int i = 0; i < 8; i++)
             {
+                Random randomNumber = new Random();
                 Card tempCard = new Card();
 
-                tempCard.CardValue = i.ToString();
+                tempCard.CardValue = randomNumber.Next(16).ToString();
 
                 cards.Add(tempCard);
                 cards.Add(tempCard);
