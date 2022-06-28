@@ -4,4 +4,5 @@ public class Card
 
     public bool ValueIsVisible { get; set; }
 
+    public int CountClicked { get; set; }
 }

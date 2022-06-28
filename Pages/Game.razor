@@ -34,7 +34,7 @@
                 Random randomNumber = new Random();
                 Card tempCard = new Card();
 
-                tempCard.CardValue = randomNumber.Next(16).ToString();
+                tempCard.CardValue = randomNumber.Next(10,100).ToString();
 
                 cards.Add(tempCard);
                 cards.Add(tempCard);
@@ -43,7 +43,17 @@
 
         private void add(Card card)
         {
-            card.CardValue += " clikced";
+            
+            if((card.CardValue.Split(' ').Contains("clicked")))
+            {
+                card.CountClicked++;
+                card.CardValue += (" " + card.CountClicked.ToString());
+            }
+            else
+            {
+                card.CountClicked++;
+                card.CardValue += " clicked";
+            }
         }
 
     
