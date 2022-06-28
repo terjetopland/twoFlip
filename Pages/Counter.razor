@@ -1,0 +1,37 @@
+﻿@using System.Numerics
+
+@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+<button type="button" class="btn btn-primary" @onclick="DecrementCount">decrement</button>
+
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me often</button>
+
+@code {
+    private BigInteger currentCount = 0;
+
+    private void IncrementCount()
+    {
+
+        currentCount += 1111;
+    }
+
+    private void DecrementCount()
+    {
+        currentCount -= 1111;
+    }
+}
+

@@ -1,0 +1,49 @@
+
+@using System.Numerics
+
+@page "/game"
+
+<PageTitle>Flip cards</PageTitle>
+
+<button type="button" class="btn btn-secondary" @onclick="FillCards">Secondary</button>
+
+<div> 
+    @foreach (var card in cards)
+    {
+    <div @onclick="(()=> add(card))">
+        <div>
+            @card.CardValue
+        </div>
+        <div>
+            @card.ValueIsVisible
+        </div>
+    </div>
+    }
+</div>
+@code 
+{
+    List<Card> cards = new List<Card>();
+
+        private void FillCards()
+        {
+            //TODO: remove instead of creating new
+            cards = new List<Card>();
+
+            for(int i = 0; i < 8; i++)
+            {
+                Card tempCard = new Card();
+
+                tempCard.CardValue = i.ToString();
+
+                cards.Add(tempCard);
+                cards.Add(tempCard);
+            }
+        }
+
+        private void add(Card card)
+        {
+            card.CardValue += " clikced";
+        }
+
+    
+}
